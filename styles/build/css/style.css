@@ -1,0 +1,146 @@
+/*ctrl + shift + B to compile*/
+body {
+  background-image: url("https://assets.codepen.io/212728/bg.jpg"); }
+
+.player-container {
+  width: 1680px;
+  margin: 0 auto;
+  position: relative; }
+  .player-container .logo {
+    position: absolute;
+    top: -10px;
+    left: 0; }
+
+.players {
+  text-align: center; }
+  .players .required {
+    text-align: right;
+    color: #800a03;
+    display: block;
+    width: 90%; }
+  .players form {
+    background-color: #0e0e0e;
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 60px;
+    color: #fff; }
+    .players form div {
+      width: calc(33% - 50px);
+      padding: 10px;
+      display: inline-block; }
+    .players form label {
+      display: block;
+      margin-bottom: 10px; }
+      .players form label span {
+        color: #800a03; }
+  .players input {
+    padding: 10px; }
+  .players button {
+    margin-top: 25px;
+    padding: 10px 30px;
+    background-color: #800a03;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.5em; }
+    .players button:hover {
+      opacity: .9; }
+
+.results {
+  min-height: 100px;
+  margin-top: 40px;
+  position: relative; }
+  .results .col-container {
+    width: calc(33% - 60px);
+    display: inline-block; }
+    .results .col-container:nth-child(1), .results .col-container:nth-child(2) {
+      margin-right: 90px; }
+    .results .col-container h1 {
+      color: #fff;
+      text-align: center;
+      width: 235px;
+      margin-left: 10px;
+      font-size: 2.5em; }
+    .results .col-container .personal, .results .col-container .difficulty {
+      margin-top: 40px;
+      background-color: #800a03;
+      border-radius: 60px;
+      padding: 15px 30px;
+      color: #ececec;
+      text-align: center;
+      position: relative;
+      height: 60px;
+      margin-bottom: 100px; }
+      .results .col-container .personal div, .results .col-container .difficulty div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px; }
+    .results .col-container .difficulty {
+      background-color: transparent;
+      margin-bottom: 50px;
+      margin-top: 10px;
+      padding: 0;
+      height: 100px;
+      z-index: 100; }
+      .results .col-container .difficulty div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+      .results .col-container .difficulty #player1bar .solid, .results .col-container .difficulty #player2bar .solid, .results .col-container .difficulty #player3bar .solid {
+        fill: #800a03; }
+      .results .col-container .difficulty .ldBar-label {
+        color: #ececec;
+        font-family: 'sans-serif';
+        font-size: 2.5em;
+        font-weight: 900;
+        text-shadow: 0 0 3px #000;
+        opacity: 0; }
+      .results .col-container .difficulty .ldBar-label:after {
+        content: "% Difficulty";
+        /* change from % to USD */
+        font-size: 0.6em; }
+  .results .player1, .results .player2, .results .player3 {
+    min-height: 649px;
+    text-align: center;
+    position: relative;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    background: #0e0e0e;
+    background: -moz-linear-gradient(top, #0e0e0e 35%, #282828 100%);
+    background: -webkit-linear-gradient(top, #0e0e0e 35%, #282828 100%);
+    background: linear-gradient(to bottom, #0e0e0e 35%, #282828 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e0e0e', endColorstr='#1C1C1C',GradientType=0 ); }
+    .results .player1 .results-container, .results .player2 .results-container, .results .player3 .results-container {
+      width: 235px;
+      min-height: 649px;
+      position: absolute;
+      top: 0px;
+      left: 10px;
+      color: #e6e6e6; }
+      .results .player1 .results-container h3, .results .player2 .results-container h3, .results .player3 .results-container h3 {
+        text-decoration: underline;
+        margin-top: 30px; }
+      .results .player1 .results-container img, .results .player2 .results-container img, .results .player3 .results-container img {
+        width: 95px;
+        margin-top: 20px; }
+    .results .player1 #player1name, .results .player1 #player2name, .results .player1 #player3name, .results .player2 #player1name, .results .player2 #player2name, .results .player2 #player3name, .results .player3 #player1name, .results .player3 #player2name, .results .player3 #player3name {
+      color: #aaa; }
+    .results .player1 #player1image, .results .player1 #player2image, .results .player1 #player3image, .results .player2 #player1image, .results .player2 #player2image, .results .player2 #player3image, .results .player3 #player1image, .results .player3 #player2image, .results .player3 #player3image {
+      position: absolute;
+      top: -66px;
+      right: -92px;
+      transition: all .1s ease-in-out; }
+      .results .player1 #player1image:hover, .results .player1 #player2image:hover, .results .player1 #player3image:hover, .results .player2 #player1image:hover, .results .player2 #player2image:hover, .results .player2 #player3image:hover, .results .player3 #player1image:hover, .results .player3 #player2image:hover, .results .player3 #player3image:hover {
+        transform: scale(1.01); }
+
+.burns {
+  transition: all .1s ease-in-out; }
+
+.burns:hover {
+  transform: scale(1.1); }

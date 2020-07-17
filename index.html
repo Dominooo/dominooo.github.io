@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Apex RNG</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="styles/build/css/style.css">
+  <link rel="stylesheet" href="styles/loading-bar.min.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<section class="player-container">
+  <img class="logo" src="https://assets.codepen.io/212728/logo.png?width=154&height=200&format=auto" />
+  <div class="players">
+    <form id="inputForm">
+      <h1>Who is Playing?</h1>
+      <div>
+        <label for="player1">Player 1<span>*</span></label>
+        <input type="text" id="player1" placeholder="Scary Spice">
+        
+      </div>
+      <div>
+        <label for="player2">Player 2</label>
+        <input type="text" id="player2" placeholder="Baby Spice">
+        
+      </div>
+      <div>
+        <label for="player3">Player 3</label>
+        <input type="text" id="player3" placeholder="Sporty Spice">
+        
+      </div>
+      <button onclick="apexRng()" type="button">Submit</button>
+      <div class="required">* required</div>
+    </form>
+    
+  </div>
+
+  <div class="results">
+    
+    <div class="col-container">
+      <div class="difficulty">
+        <div id="player1bar" class="ldBar label-center"
+          data-type="fill"
+          data-fill-background="#0e0e0e;"
+          data-path="M66.5,118.5l-42,30-22-21,73-126,73,126-21,21-43-30h26l-35-61-35,61Z">
+        </div>
+      </div>
+      <!-- <h1 id="player1name"></h1> -->
+      <div class="player1">
+        <div class="results-container">
+          <h3 id ="player1name"></h3>
+          <img class="burns" id="player1gun1image" src="" />
+          <div id ="player1gun1"></div>
+          <img class="burns" id="player1gun2image" src="" />
+          <div id ="player1gun2"></div>
+          <img class="burns" id="player1armorimage" src="" />
+          <div id ="player1armor"></div>
+          <img class="burns" id="player1helmetimage" src="" />
+          <div id ="player1helmet"></div>
+        </div>
+        <img id ="player1image" src=""></img>
+      </div>
+      <div class="personal">
+        <div id ="player1personal"></div>
+        <div id ="player1difficulty"></div>
+      </div>
+    </div>
+    
+
+    <div class="col-container">
+      <div class="difficulty">
+        <div id="player2bar" class="ldBar label-center"
+          data-type="fill"
+          data-fill-background="#0e0e0e;"
+          data-path="M66.5,118.5l-42,30-22-21,73-126,73,126-21,21-43-30h26l-35-61-35,61Z">
+        </div>
+      </div>
+      <!-- <h1 id="player2name"></h1> -->
+      <div class="player2">
+        <div class="results-container">
+          <h3 id ="player2name"></h3>
+          <img class="burns" id="player2gun1image" src="" />
+          <div id ="player2gun1"></div>
+          <img class="burns" id="player2gun2image" src="" />
+          <div id ="player2gun2"></div>
+          <img class="burns" id="player2armorimage" src="" />
+          <div id ="player2armor"></div>
+          <img class="burns" id="player2helmetimage" src="" />
+          <div id ="player2helmet"></div>
+        </div>
+        <img id ="player2image"src=""></img>
+      </div>
+      <div class="personal">
+        <div id ="player2personal"></div>
+        <div id ="player2difficulty"></div>
+      </div>
+    </div>
+    
+
+    <div class="col-container">
+      <div class="difficulty">
+        <div id="player3bar" class="ldBar label-center"
+          data-type="fill"
+          data-fill-background="#0e0e0e;"
+          data-path="M66.5,118.5l-42,30-22-21,73-126,73,126-21,21-43-30h26l-35-61-35,61Z">
+        </div>
+      </div>
+      <!-- <h1 id="player3name"></h1> -->
+      <div class="player3">
+        <div class="results-container">
+          <h3 id ="player3name"></h3>
+          <img class="burns" id="player3gun1image" src="" />
+          <div id ="player3gun1"></div>
+          <img class="burns" id="player3gun2image" src="" />
+          <div id ="player3gun2"></div>
+          <img class="burns" id="player3armorimage" src="" />
+          <div id ="player3armor"></div>
+          <img class="burns" id="player3helmetimage" src="" />
+          <div id ="player3helmet"></div>
+        </div>
+        <img id ="player3image"src=""></img>
+      </div>
+      <div class="personal">
+        <div id ="player3personal"></div>
+        <div id ="player3difficulty"></div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script  src="scripts/script.js"></script>
+  <script  src="scripts/loading-bar.min.js"></script>
+</body>
+</html>
