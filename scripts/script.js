@@ -107,9 +107,9 @@ var personalObject = {
   "28" : {"name": "Before resurrecting a teammate you must drop ALL of your gear. It's off limits to anyone on your team.", "chance":10, "difficulty":7, "image":""},
   "29" : {"name": "Flightmaster: You must use every redeploy balloon you see.", "chance":10, "difficulty":4, "image":""},
   "30" : {"name": "Take the role of hypeman. You need to be commentating on everyone elses moves.", "chance":10, "difficulty":2, "image":""},
-  "31" : {"name": "LUCKY!!! No special rules!", "chance":10, "difficulty":1, "image":""}
-  "32" : {"name": "Gray backpack only", "chance":10, "difficulty":2, "image":""}
-  "33" : {"name": "Isolation: Mute discord and game.", "chance":10, "difficulty":10, "image":""}
+  "31" : {"name": "LUCKY!!! No special rules!", "chance":10, "difficulty":1, "image":""},
+  "32" : {"name": "Gray backpack only", "chance":10, "difficulty":2, "image":""},
+  "33" : {"name": "Isolation: Mute discord and game.", "chance":10, "difficulty":10, "image":""},
   "34" : {"name": "Dictator: You decide where the team goes. Reprimand any teammate that forgets to call you Sir.", "chance":10, "difficulty":2, "image":""}
 }
 
