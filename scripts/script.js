@@ -5,19 +5,19 @@ var player3;
 
 
 var legendObject = {
-  "1" : {"name": "Wraith", "chance":10, "difficulty":2, "image":"./images/legends/wraith.png"},
-  "2" : {"name": "Mirage", "chance":10, "difficulty":4, "image":"./images/legends/mirage.png"},
-  "3" : {"name": "Octane", "chance":5, "difficulty":8, "image":"./images/legends/octane.png"},
+  "1" : {"name": "Wraith", "chance":10, "difficulty":1, "image":"./images/legends/wraith.png"},
+  "2" : {"name": "Mirage", "chance":10, "difficulty":2, "image":"./images/legends/mirage.png"},
+  "3" : {"name": "Octane", "chance":5, "difficulty":3, "image":"./images/legends/octane.png"},
   "4" : {"name": "Revenant", "chance":15, "difficulty":1, "image":"./images/legends/revenant.png"},
   "5" : {"name": "Gibralter", "chance":15, "difficulty":1, "image":"./images/legends/gibralter.png"},
-  "6" : {"name": "Caustic", "chance":25, "difficulty":3, "image":"./images/legends/caustic.png"},
-  "7" : {"name": "Wattson", "chance":10, "difficulty":3, "image":"./images/legends/wattson.png"},
+  "6" : {"name": "Caustic", "chance":25, "difficulty":2, "image":"./images/legends/caustic.png"},
+  "7" : {"name": "Wattson", "chance":10, "difficulty":2, "image":"./images/legends/wattson.png"},
   "8" : {"name": "Lifeline", "chance":10, "difficulty":1, "image":"./images/legends/lifeline.png"},
-  "9" : {"name": "Loba", "chance":10, "difficulty":5, "image":"./images/legends/loba.png"},
-  "10" : {"name": "Bloodhound", "chance":10, "difficulty":2, "image":"./images/legends/bloodhound.png"},
+  "9" : {"name": "Loba", "chance":10, "difficulty":2, "image":"./images/legends/loba.png"},
+  "10" : {"name": "Bloodhound", "chance":10, "difficulty":1, "image":"./images/legends/bloodhound.png"},
   "11" : {"name": "Pathfinder", "chance":10, "difficulty":1, "image":"./images/legends/pathfinder.png"},
-  "12" : {"name": "Crypto", "chance":10, "difficulty":10, "image":"./images/legends/crypto.png"},
-  "13" : {"name": "Bangalore", "chance":10, "difficulty":5, "image":"./images/legends/bangalore.png"}
+  "12" : {"name": "Crypto", "chance":10, "difficulty":3, "image":"./images/legends/crypto.png"},
+  "13" : {"name": "Bangalore", "chance":10, "difficulty":2, "image":"./images/legends/bangalore.png"}
 }
 
 var gunObject = {
@@ -137,13 +137,13 @@ function printPlayers() {
     $("#player1armorimage").attr("src", player1.armorimage)
     $("#player1gun1image").attr("src", player1.gun1image)
     $("#player1gun2image").attr("src", player1.gun2image)
-    // $("#player1difficulty").html(player1.difficulty)
     ldbar = new ldBar("#player1bar", {
       "data-fill-background":'#f00', 
       "data-fill": '#f00',
       "data-duration": "2000"
     });
     ldbar.set(player1.difficulty/.5);
+    $("#player1difficulty").html(player1.score)
   }
   if (playerNum >= 2) {
     $("#player2name").html(player2.name)
@@ -158,13 +158,13 @@ function printPlayers() {
     $("#player2armorimage").attr("src", player2.armorimage)
     $("#player2gun1image").attr("src", player2.gun1image)
     $("#player2gun2image").attr("src", player2.gun2image)
-    // $("#player2difficulty").html(player2.difficulty)
     ldbar = new ldBar("#player2bar", {
       "data-fill-background":'#f00', 
       "data-fill": '#f00',
       "data-duration": "2000"
     });
     ldbar.set(player2.difficulty/.5);
+    $("#player2difficulty").html(player2.score)
   }
   if (playerNum == 3) {
     $("#player3name").html(player3.name)
@@ -179,16 +179,16 @@ function printPlayers() {
     $("#player3armorimage").attr("src", player3.armorimage)
     $("#player3gun1image").attr("src", player3.gun1image)
     $("#player3gun2image").attr("src", player3.gun2image)
-    // $("#player3difficulty").html(player3.difficulty)
     ldbar = new ldBar("#player3bar", {
       "data-fill-background":'#f00', 
       "data-fill": '#f00',
       "data-duration": "2000"
     });
     ldbar.set(player3.difficulty/.5);
+    $("#player3difficulty").html(player3.score)
   }
   //difficulty test
-  setTimeout(function(){ $(".ldBar-label").fadeTo("fast", 1) }, 300);
+  // setTimeout(function(){ $(".ldBar-label").fadeTo("fast", 1) }, 300);
 }
 
 // Make sure players don't tet the same legend to play as
@@ -239,23 +239,22 @@ function setPlayers() {
       var helmet = getRandomInt(1,countProperties(helmetObject));
       var personal = getRandomInt(1,countProperties(personalObject));
       var difficulty = legendObject[legend].difficulty + gunObject[gun1].difficulty + gunObject[gun2].difficulty + armorObject[armor].difficulty + helmetObject[helmet].difficulty + personalObject[personal].difficulty;
-    
+      var score = legendObject[legend].difficulty * gunObject[gun1].difficulty * gunObject[gun2].difficulty * armorObject[armor].difficulty * helmetObject[helmet].difficulty * personalObject[personal].difficulty;
       if (i == 1) {
-        player1 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty);
+        player1 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty, score);
       }
       if (i == 2) {
-        player2 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty);
+        player2 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty, score);
       }
       if (i == 3) {
-        player3 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty);
+        player3 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty, score);
       }
     
   }
-
 }
 
 // player constructor function
-function Player(legend, legendimage, gun1, gun1image, gun2, gun2image, armor, armorimage, helmet, helmetimage, personal, name, difficulty) {
+function Player(legend, legendimage, gun1, gun1image, gun2, gun2image, armor, armorimage, helmet, helmetimage, personal, name, difficulty, score) {
   this.legend = legend;
   this.legendimage = legendimage;
   this.gun1 = gun1;
@@ -269,6 +268,7 @@ function Player(legend, legendimage, gun1, gun1image, gun2, gun2image, armor, ar
   this.personal = personal;
   this.name = name;
   this.difficulty = difficulty;
+  this.score = score;
 }
 
 // get the number of items in an object

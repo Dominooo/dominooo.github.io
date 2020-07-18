@@ -39,10 +39,11 @@
     
     <div class="col-container">
       <div class="difficulty">
-        <div id="player1bar" class="ldBar label-center"
+        <div id="player1bar" class="ldBar"
           data-type="fill"
           data-fill-background="#0e0e0e;"
           data-path="M66.5,118.5l-42,30-22-21,73-126,73,126-21,21-43-30h26l-35-61-35,61Z">
+          <div id ="player1difficulty" class="score"></div>
         </div>
       </div>
       <!-- <h1 id="player1name"></h1> -->
@@ -62,7 +63,7 @@
       </div>
       <div class="personal">
         <div id ="player1personal"></div>
-        <div id ="player1difficulty"></div>
+        
       </div>
     </div>
     
@@ -73,6 +74,7 @@
           data-type="fill"
           data-fill-background="#0e0e0e;"
           data-path="M66.5,118.5l-42,30-22-21,73-126,73,126-21,21-43-30h26l-35-61-35,61Z">
+          <div id ="player2difficulty" class="score"></div>
         </div>
       </div>
       <!-- <h1 id="player2name"></h1> -->
@@ -91,8 +93,7 @@
         <img id ="player2image"src=""></img>
       </div>
       <div class="personal">
-        <div id ="player2personal"></div>
-        <div id ="player2difficulty"></div>
+        <div id ="player2personal"></div>  
       </div>
     </div>
     
@@ -103,6 +104,7 @@
           data-type="fill"
           data-fill-background="#0e0e0e;"
           data-path="M66.5,118.5l-42,30-22-21,73-126,73,126-21,21-43-30h26l-35-61-35,61Z">
+          <div id ="player3difficulty" class="score"></div>
         </div>
       </div>
       <!-- <h1 id="player3name"></h1> -->
@@ -122,13 +124,30 @@
       </div>
       <div class="personal">
         <div id ="player3personal"></div>
-        <div id ="player3difficulty"></div>
       </div>
     </div>
     
   </div>
 </section>
 <!-- partial -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+
+<!-- <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCdNFNn4_X3M86uss2w4diXxyvAc3R9mT8",
+    authDomain: "apexrng-4570a.firebaseapp.com",
+    databaseURL: "https://apexrng-4570a.firebaseio.com",
+    projectId: "apexrng-4570a",
+    storageBucket: "apexrng-4570a.appspot.com",
+    messagingSenderId: "936391318809",
+    appId: "1:936391318809:web:ec4c1c74611a3c1f723988"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script> -->
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
   <script  src="scripts/script.js"></script>
   <script  src="scripts/loading-bar.min.js"></script>

@@ -141,8 +141,16 @@ body {
         opacity: 0;
       }
 
+      .score {
+        color: #ececec;
+        font-family: 'sans-serif';
+        font-size: 2.5em;
+        font-weight: 900;
+        text-shadow: 0 0 3px #000;
+      }
+
       .ldBar-label:after {
-        content: "% Difficulty"; /* change from % to USD */
+        content: " Difficulty"; 
         font-size: 0.6em;
       }
     }

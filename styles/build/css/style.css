@@ -101,9 +101,14 @@ body {
         font-weight: 900;
         text-shadow: 0 0 3px #000;
         opacity: 0; }
+      .results .col-container .difficulty .score {
+        color: #ececec;
+        font-family: 'sans-serif';
+        font-size: 2.5em;
+        font-weight: 900;
+        text-shadow: 0 0 3px #000; }
       .results .col-container .difficulty .ldBar-label:after {
-        content: "% Difficulty";
-        /* change from % to USD */
+        content: " Difficulty";
         font-size: 0.6em; }
   .results .player1, .results .player2, .results .player3 {
     min-height: 649px;
