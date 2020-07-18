@@ -5,43 +5,43 @@ var player3;
 
 
 var legendObject = {
-  "1" : {"name": "Wraith", "chance":10, "difficulty":1, "image":"./images/legends/wraith.png"},
-  "2" : {"name": "Mirage", "chance":10, "difficulty":2, "image":"./images/legends/mirage.png"},
-  "3" : {"name": "Octane", "chance":5, "difficulty":4, "image":"./images/legends/octane.png"},
-  "4" : {"name": "Revenant", "chance":15, "difficulty":4, "image":"./images/legends/revenant.png"},
+  "1" : {"name": "Wraith", "chance":10, "difficulty":2, "image":"./images/legends/wraith.png"},
+  "2" : {"name": "Mirage", "chance":10, "difficulty":4, "image":"./images/legends/mirage.png"},
+  "3" : {"name": "Octane", "chance":5, "difficulty":8, "image":"./images/legends/octane.png"},
+  "4" : {"name": "Revenant", "chance":15, "difficulty":1, "image":"./images/legends/revenant.png"},
   "5" : {"name": "Gibralter", "chance":15, "difficulty":1, "image":"./images/legends/gibralter.png"},
-  "6" : {"name": "Caustic", "chance":25, "difficulty":4, "image":"./images/legends/caustic.png"},
-  "7" : {"name": "Wattson", "chance":10, "difficulty":1, "image":"./images/legends/wattson.png"},
-  "8" : {"name": "Lifeline", "chance":10, "difficulty":4, "image":"./images/legends/lifeline.png"},
-  "9" : {"name": "Loba", "chance":10, "difficulty":4, "image":"./images/legends/loba.png"},
+  "6" : {"name": "Caustic", "chance":25, "difficulty":3, "image":"./images/legends/caustic.png"},
+  "7" : {"name": "Wattson", "chance":10, "difficulty":3, "image":"./images/legends/wattson.png"},
+  "8" : {"name": "Lifeline", "chance":10, "difficulty":1, "image":"./images/legends/lifeline.png"},
+  "9" : {"name": "Loba", "chance":10, "difficulty":5, "image":"./images/legends/loba.png"},
   "10" : {"name": "Bloodhound", "chance":10, "difficulty":2, "image":"./images/legends/bloodhound.png"},
   "11" : {"name": "Pathfinder", "chance":10, "difficulty":1, "image":"./images/legends/pathfinder.png"},
-  "12" : {"name": "Crypto", "chance":10, "difficulty":4, "image":"./images/legends/crypto.png"},
-  "13" : {"name": "Bangalore", "chance":10, "difficulty":2, "image":"./images/legends/bangalore.png"}
+  "12" : {"name": "Crypto", "chance":10, "difficulty":10, "image":"./images/legends/crypto.png"},
+  "13" : {"name": "Bangalore", "chance":10, "difficulty":5, "image":"./images/legends/bangalore.png"}
 }
 
 var gunObject = {
   "1" : {"name": "Kraber", "chance":1, "difficulty":5, "image":"./images/guns/Kraber_SR.png"},
   "2" : {"name": "Sentinel", "chance":1, "difficulty":4, "image":"./images/guns/Sentinel.png"},
   "3" : {"name": "Longbow", "chance":2, "difficulty":3, "image":"./images/guns/Longbow_DRM_SR.png"},
-  "4" : {"name": "Triple Take", "chance":2, "difficulty":4, "image":"./images/guns/Tripple_Take_SR.png"},
+  "4" : {"name": "Triple Take", "chance":2, "difficulty":3, "image":"./images/guns/Tripple_Take_SR.png"},
   "5" : {"name": "Charge Rifle", "chance":1, "difficulty":4, "image":"./images/guns/Charge_Rifle.png"},
-  "6" : {"name": "Hemlok", "chance":3, "difficulty":2, "image":"./images/guns/Hemlok_Burst_AR.png"},
+  "6" : {"name": "Hemlok", "chance":3, "difficulty":3, "image":"./images/guns/Hemlok_Burst_AR.png"},
   "7" : {"name": "Flatline", "chance":3, "difficulty":4, "image":"./images/guns/Flatline_AR.png"},
-  "8" : {"name": "G7 Scout", "chance":3, "difficulty":3, "image":"./images/guns/G7_Scout_SR.png"},
+  "8" : {"name": "G7 Scout", "chance":3, "difficulty":2, "image":"./images/guns/G7_Scout_SR.png"},
   "9" : {"name": "R-301", "chance":3, "difficulty":4, "image":"./images/guns/R-301_Carabine_AR.png"},
   "10" : {"name": "HAVOC", "chance":2, "difficulty":4, "image":"./images/guns/Havoc_Rifle_AR.png"},
-  "11" : {"name": "Devotion", "chance":1, "difficulty":3, "image":"./images/guns/Devotion_LMG.png"},
+  "11" : {"name": "Devotion", "chance":1, "difficulty":5, "image":"./images/guns/Devotion_LMG.png"},
   "12" : {"name": "Spitfire", "chance":3, "difficulty":3, "image":"./images/guns/Spitfire_LMG.png"},
   "13" : {"name": "L-STAR", "chance":1, "difficulty":3, "image":"./images/guns/L-Star.png"},
-  "14" : {"name": "Prowler", "chance":3, "difficulty":3, "image":"./images/guns/Prowler_Burst_SMG.png"},
+  "14" : {"name": "Prowler", "chance":3, "difficulty":2, "image":"./images/guns/Prowler_Burst_SMG.png"},
   "15" : {"name": "R-99", "chance":3, "difficulty":3, "image":"./images/guns/R-99_SMG.png"},
   "16" : {"name": "Alternator", "chance":1, "difficulty":5, "image":"./images/guns/Alternator_SMG.png"},
   "17" : {"name": "Mastiff", "chance":1, "difficulty":3, "image":"./images/guns/Mastiff_SG.png"},
   "18" : {"name": "EVA-8", "chance":2, "difficulty":4, "image":"./images/guns/EVA-8_Auto_SG.png"},
   "19" : {"name": "Peacekeeper", "chance":2, "difficulty":5, "image":"./images/guns/PeaceKeeper_SG.png"},
   "20" : {"name": "Mozambique", "chance":2, "difficulty":8, "image":"./images/guns/Mozambique_SG.png"},
-  "21" : {"name": "Wingman", "chance":3, "difficulty":3, "image":"./images/guns/Wingman_Pistol.png"},
+  "21" : {"name": "Wingman", "chance":3, "difficulty":4, "image":"./images/guns/Wingman_Pistol.png"},
   "22" : {"name": "RE-45 Auto", "chance":3, "difficulty":4, "image":"./images/guns/RE-45_Pistol.png"},
   "23" : {"name": "P2020", "chance":2, "difficulty":4, "image":"./images/guns/P2020_Pistol.png"},
   "24" : {"name": "Any sniper", "chance":5, "difficulty":2, "image":"./images/guns/any_sniper.png"},
@@ -55,7 +55,7 @@ var gunObject = {
 }
 
 var armorObject = {
-  "1" : {"name": "Gray armor only", "chance":10, "difficulty":7, "image":"./images/armor/gray.png"},
+  "1" : {"name": "Gray armor only", "chance":10, "difficulty":4, "image":"./images/armor/gray.png"},
   "2" : {"name": "Blue armor only", "chance":10, "difficulty":5, "image":"./images/armor/blue.png"},
   "3" : {"name": "Purple armor only", "chance":10, "difficulty":6, "image":"./images/armor/purple.png"},
   "4" : {"name": "Gold armor only", "chance":5, "difficulty":8, "image":"./images/armor/gold.png"},
@@ -66,7 +66,7 @@ var armorObject = {
 }
 
 var helmetObject = {
-  "1" : {"name": "Gray helmet only", "chance":10, "difficulty":7, "image":"./images/helmets/gray.png"},
+  "1" : {"name": "Gray helmet only", "chance":10, "difficulty":4, "image":"./images/helmets/gray.png"},
   "2" : {"name": "Blue helmet only", "chance":10, "difficulty":5, "image":"./images/helmets/blue.png"},
   "3" : {"name": "Purple helmet only", "chance":10, "difficulty":6, "image":"./images/helmets/purple.png"},
   "4" : {"name": "Gold helmet only", "chance":5, "difficulty":8, "image":"./images/helmets/gold.png"},
@@ -90,7 +90,7 @@ var personalObject = {
   "11" : {"name": "I'm so sorry. You must crouch everywhere you walk. Clambering, balloons, and zips are allowed.", "chance":10, "difficulty":10, "image":""},
   "12" : {"name": "If you have a scope on your gun, you must do a 360 before firing the first bullet in your clip", "chance":10, "difficulty":6, "image":""},
   "13" : {"name": "Respect the Dead: No looting bodies.", "chance":10, "difficulty":8, "image":""},
-  "14" : {"name": "Dead Eye: You are not allowed to put any scopes on your weapons.", "chance":10, "difficulty":7, "image":""},
+  "14" : {"name": "Every time you go up a balloon you must keep shooting until you reach the top", "chance":10, "difficulty":7, "image":""},
   "15" : {"name": "Lazy Looter: You cannot loot care package.", "chance":10, "difficulty":3, "image":""},
   "16" : {"name": "You are not allowed to carry or throw grenades.", "chance":10, "difficulty":5, "image":""},
   "17" : {"name": "The first gun you find, no matter type is the only weapon you can use for the game. This overrides your gun rules.", "chance":10, "difficulty":7, "image":""},
@@ -108,6 +108,9 @@ var personalObject = {
   "29" : {"name": "Flightmaster: You must use every redeploy balloon you see.", "chance":10, "difficulty":4, "image":""},
   "30" : {"name": "Take the role of hypeman. You need to be commentating on everyone elses moves.", "chance":10, "difficulty":2, "image":""},
   "31" : {"name": "LUCKY!!! No special rules!", "chance":10, "difficulty":1, "image":""}
+  "32" : {"name": "Gray backpack only", "chance":10, "difficulty":2, "image":""}
+  "33" : {"name": "Isolation: Mute discord and game.", "chance":10, "difficulty":10, "image":""}
+  "34" : {"name": "Dictator: You decide where the team goes. Reprimand any teammate that forgets to call you Sir.", "chance":10, "difficulty":2, "image":""}
 }
 
 // user input triggers this function to start the RNG process.
