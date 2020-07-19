@@ -20,37 +20,37 @@ var legendObject = {
 }
 
 var gunObject = {
-  "0" : {"name": "Fists", "chance":1, "difficulty":10, "image":"./images/guns/fists.png"},
-  "1" : {"name": "Kraber", "chance":1, "difficulty":5, "image":"./images/guns/Kraber_SR.png"},
-  "2" : {"name": "Sentinel", "chance":3, "difficulty":4, "image":"./images/guns/Sentinel.png"},
-  "3" : {"name": "Longbow", "chance":3, "difficulty":3, "image":"./images/guns/Longbow_DRM_SR.png"},
-  "4" : {"name": "Triple Take", "chance":3, "difficulty":3, "image":"./images/guns/Tripple_Take_SR.png"},
-  "5" : {"name": "Charge Rifle", "chance":3, "difficulty":4, "image":"./images/guns/Charge_Rifle.png"},
-  "6" : {"name": "Hemlok", "chance":3, "difficulty":3, "image":"./images/guns/Hemlok_Burst_AR.png"},
-  "7" : {"name": "Flatline", "chance":3, "difficulty":4, "image":"./images/guns/Flatline_AR.png"},
-  "8" : {"name": "G7 Scout", "chance":3, "difficulty":2, "image":"./images/guns/G7_Scout_SR.png"},
-  "9" : {"name": "R-301", "chance":3, "difficulty":4, "image":"./images/guns/R-301_Carabine_AR.png"},
-  "10" : {"name": "HAVOC", "chance":3, "difficulty":4, "image":"./images/guns/Havoc_Rifle_AR.png"},
-  "11" : {"name": "Devotion", "chance":1, "difficulty":5, "image":"./images/guns/Devotion_LMG.png"},
-  "12" : {"name": "Spitfire", "chance":3, "difficulty":3, "image":"./images/guns/Spitfire_LMG.png"},
-  "13" : {"name": "L-STAR", "chance":3, "difficulty":3, "image":"./images/guns/L-Star.png"},
-  "14" : {"name": "Prowler", "chance":3, "difficulty":2, "image":"./images/guns/Prowler_Burst_SMG.png"},
-  "15" : {"name": "R-99", "chance":3, "difficulty":3, "image":"./images/guns/R-99_SMG.png"},
-  "16" : {"name": "Alternator", "chance":3, "difficulty":5, "image":"./images/guns/Alternator_SMG.png"},
-  "17" : {"name": "Mastiff", "chance":3, "difficulty":3, "image":"./images/guns/Mastiff_SG.png"},
-  "18" : {"name": "EVA-8", "chance":3, "difficulty":4, "image":"./images/guns/EVA-8_Auto_SG.png"},
-  "19" : {"name": "Peacekeeper", "chance":1, "difficulty":5, "image":"./images/guns/PeaceKeeper_SG.png"},
-  "20" : {"name": "Mozambique", "chance":1, "difficulty":8, "image":"./images/guns/Mozambique_SG.png"},
-  "21" : {"name": "Wingman", "chance":3, "difficulty":4, "image":"./images/guns/Wingman_Pistol.png"},
-  "22" : {"name": "RE-45 Auto", "chance":3, "difficulty":4, "image":"./images/guns/RE-45_Pistol.png"},
-  "23" : {"name": "P2020", "chance":3, "difficulty":4, "image":"./images/guns/P2020_Pistol.png"},
-  "24" : {"name": "Any sniper", "chance":10, "difficulty":2, "image":"./images/guns/any_sniper.png"},
-  "25" : {"name": "Any AR", "chance":10, "difficulty":2, "image":"./images/guns/any_AR.png"},
-  "26" : {"name": "Any LMG", "chance":10, "difficulty":2, "image":"./images/guns/any_LMG.png"},
-  "27" : {"name": "Any SMG", "chance":10, "difficulty":2, "image":"./images/guns/any_SMG.png"},
-  "28" : {"name": "Any shotgun", "chance":10, "difficulty":3, "image":"./images/guns/any_SG.png"},
-  "29" : {"name": "Any pistol", "chance":10, "difficulty":2, "image":"./images/guns/any_pistol.png"},
-  "30" : {"name": "Any gun", "chance":5, "difficulty":1, "image":"./images/guns/any.png"}
+  "0" : {"name": "Fists", "type":"none", "chance":1, "difficulty":10, "image":"./images/guns/fists.png"},
+  "1" : {"name": "Kraber", "type":"shotgun", "chance":1, "difficulty":5, "image":"./images/guns/Kraber_SR.png"},
+  "2" : {"name": "Sentinel", "type":"sniper", "chance":3, "difficulty":4, "image":"./images/guns/Sentinel.png"},
+  "3" : {"name": "Longbow", "type":"sniper", "chance":3, "difficulty":3, "image":"./images/guns/Longbow_DRM_SR.png"},
+  "4" : {"name": "Triple Take", "type":"sniper", "chance":3, "difficulty":3, "image":"./images/guns/Tripple_Take_SR.png"},
+  "5" : {"name": "Charge Rifle", "type":"sniper", "chance":3, "difficulty":4, "image":"./images/guns/Charge_Rifle.png"},
+  "6" : {"name": "Hemlok", "type":"ar", "chance":3, "difficulty":3, "image":"./images/guns/Hemlok_Burst_AR.png"},
+  "7" : {"name": "Flatline", "type":"ar", "chance":3, "difficulty":4, "image":"./images/guns/Flatline_AR.png"},
+  "8" : {"name": "G7 Scout", "type":"ar", "chance":3, "difficulty":2, "image":"./images/guns/G7_Scout_SR.png"},
+  "9" : {"name": "R-301", "type":"ar", "chance":3, "difficulty":4, "image":"./images/guns/R-301_Carabine_AR.png"},
+  "10" : {"name": "HAVOC", "type":"ar", "chance":3, "difficulty":4, "image":"./images/guns/Havoc_Rifle_AR.png"},
+  "11" : {"name": "Devotion", "type":"lmg", "chance":1, "difficulty":5, "image":"./images/guns/Devotion_LMG.png"},
+  "12" : {"name": "Spitfire", "type":"lmg", "chance":3, "difficulty":3, "image":"./images/guns/Spitfire_LMG.png"},
+  "13" : {"name": "L-STAR", "type":"lmg", "chance":3, "difficulty":3, "image":"./images/guns/L-Star.png"},
+  "14" : {"name": "Prowler", "type":"smg", "chance":3, "difficulty":2, "image":"./images/guns/Prowler_Burst_SMG.png"},
+  "15" : {"name": "R-99", "type":"smg", "chance":3, "difficulty":3, "image":"./images/guns/R-99_SMG.png"},
+  "16" : {"name": "Alternator", "type":"smg", "chance":3, "difficulty":5, "image":"./images/guns/Alternator_SMG.png"},
+  "17" : {"name": "Mastiff", "type":"shotgun", "chance":3, "difficulty":3, "image":"./images/guns/Mastiff_SG.png"},
+  "18" : {"name": "EVA-8", "type":"shotgun", "chance":3, "difficulty":4, "image":"./images/guns/EVA-8_Auto_SG.png"},
+  "19" : {"name": "Peacekeeper", "type":"shotgun", "chance":1, "difficulty":5, "image":"./images/guns/PeaceKeeper_SG.png"},
+  "20" : {"name": "Mozambique", "type":"shotgun", "chance":1, "difficulty":8, "image":"./images/guns/Mozambique_SG.png"},
+  "21" : {"name": "Wingman", "type":"pistol", "chance":3, "difficulty":4, "image":"./images/guns/Wingman_Pistol.png"},
+  "22" : {"name": "RE-45 Auto", "type":"pistol", "chance":3, "difficulty":4, "image":"./images/guns/RE-45_Pistol.png"},
+  "23" : {"name": "P2020", "type":"pistol", "chance":3, "difficulty":4, "image":"./images/guns/P2020_Pistol.png"},
+  "24" : {"name": "Any sniper", "type":"sniper", "chance":10, "difficulty":2, "image":"./images/guns/any_sniper.png"},
+  "25" : {"name": "Any AR", "type":"ar", "chance":10, "difficulty":2, "image":"./images/guns/any_AR.png"},
+  "26" : {"name": "Any LMG", "type":"lmg", "chance":10, "difficulty":2, "image":"./images/guns/any_LMG.png"},
+  "27" : {"name": "Any SMG", "type":"smg", "chance":10, "difficulty":2, "image":"./images/guns/any_SMG.png"},
+  "28" : {"name": "Any shotgun", "type":"shotgun", "chance":10, "difficulty":3, "image":"./images/guns/any_SG.png"},
+  "29" : {"name": "Any pistol", "type":"pistol", "chance":10, "difficulty":2, "image":"./images/guns/any_pistol.png"},
+  "30" : {"name": "Any gun", "type":"any", "chance":5, "difficulty":1, "image":"./images/guns/any.png"}
   
 }
 
@@ -232,7 +232,7 @@ function differentLegends() {
     } else {
       // reset 2
       if (player1.legend == player2.legend) {
-        player2.legend = legendObject[getRandomInt(1,countProperties(legendObject))].name
+        player2.legend = legendArray[getRandomInt(1,legendArray.length)].name
       }
       //rerun the legend check
       differentLegends();
@@ -246,10 +246,10 @@ function differentLegends() {
     } else {
       //reset 2 or 3
       if (player1.legend == player2.legend) {
-        player2.legend = legendObject[getRandomInt(1,countProperties(legendObject))].name
+        player2.legend = legendArray[getRandomInt(1,legendArray.length)].name
       }
       if (player2.legend == player3.legend) {
-        player3.legend = legendObject[getRandomInt(1,countProperties(legendObject))].name
+        player3.legend = legendArray[getRandomInt(1,legendArray.length)].name
       }
     }
   }
@@ -296,13 +296,28 @@ function setPlayers() {
       var score = (legendArray[legend].difficulty + ((gunArray[gun1].difficulty * gunArray[gun2].difficulty)) + (armorArray[armor].difficulty * helmetArray[helmet].difficulty)) * personalArray[personal].difficulty;
 
       if (i == 1) {
-        player1 = new Player(legendArray[legend].name, legendArray[legend].image, gunArray[gun1].name, gunArray[gun1].image, gunArray[gun2].name, gunArray[gun2].image, armorArray[armor].name, armorArray[armor].image, helmetArray[helmet].name, helmetArray[helmet].image, personalArray[personal].name, $("#player"+i).val(), difficulty, score);
+        
+        if (gunArray[gun1].name == gunArray[gun2].name) {
+          setPlayers();
+        } else {
+          player1 = new Player(legendArray[legend].name, legendArray[legend].image, gunArray[gun1].name, gunArray[gun1].image, gunArray[gun2].name, gunArray[gun2].image, armorArray[armor].name, armorArray[armor].image, helmetArray[helmet].name, helmetArray[helmet].image, personalArray[personal].name, $("#player"+i).val(), difficulty, score);
+        }
       }
       if (i == 2) {
-        player2 = new Player(legendArray[legend].name, legendArray[legend].image, gunArray[gun1].name, gunArray[gun1].image, gunArray[gun2].name, gunArray[gun2].image, armorArray[armor].name, armorArray[armor].image, helmetArray[helmet].name, helmetArray[helmet].image, personalArray[personal].name, $("#player"+i).val(), difficulty, score);
+        
+        if (gunArray[gun1].name == gunArray[gun2].name) {
+          setPlayers();
+        } else {
+          player2 = new Player(legendArray[legend].name, legendArray[legend].image, gunArray[gun1].name, gunArray[gun1].image, gunArray[gun2].name, gunArray[gun2].image, armorArray[armor].name, armorArray[armor].image, helmetArray[helmet].name, helmetArray[helmet].image, personalArray[personal].name, $("#player"+i).val(), difficulty, score);
+        }
       }
       if (i == 3) {
-        player3 = new Player(legendArray[legend].name, legendArray[legend].image, gunArray[gun1].name, gunArray[gun1].image, gunArray[gun2].name, gunArray[gun2].image, armorArray[armor].name, armorArray[armor].image, helmetArray[helmet].name, helmetArray[helmet].image, personalArray[personal].name, $("#player"+i).val(), difficulty, score);
+        
+        if (gunArray[gun1].name == gunArray[gun2].name) {
+          setPlayers();
+        } else {
+          player3 = new Player(legendArray[legend].name, legendArray[legend].image, gunArray[gun1].name, gunArray[gun1].image, gunArray[gun2].name, gunArray[gun2].image, armorArray[armor].name, armorArray[armor].image, helmetArray[helmet].name, helmetArray[helmet].image, personalArray[personal].name, $("#player"+i).val(), difficulty, score);
+        }
       }
     
   }
