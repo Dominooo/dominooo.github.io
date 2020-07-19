@@ -292,8 +292,8 @@ function setPlayers() {
       var armor = getRandomInt(0,armorArray.length);
       var helmet = getRandomInt(0,helmetArray.length);
       var personal = getRandomInt(0,personalArray.length);
-      var difficulty = legendArray[legend].difficulty + ((gunArray[gun1].difficulty * gunArray[gun2].difficulty)) + (armorArray[armor].difficulty * helmetArray[helmet].difficulty) * personalArray[personal].difficulty;
-      var score = legendArray[legend].difficulty + ((gunArray[gun1].difficulty * gunArray[gun2].difficulty)) + (armorArray[armor].difficulty * helmetArray[helmet].difficulty) * personalArray[personal].difficulty;
+      var difficulty = (legendArray[legend].difficulty + ((gunArray[gun1].difficulty * gunArray[gun2].difficulty)) + (armorArray[armor].difficulty * helmetArray[helmet].difficulty)) * personalArray[personal].difficulty;
+      var score = (legendArray[legend].difficulty + ((gunArray[gun1].difficulty * gunArray[gun2].difficulty)) + (armorArray[armor].difficulty * helmetArray[helmet].difficulty)) * personalArray[personal].difficulty;
 
       if (i == 1) {
         player1 = new Player(legendArray[legend].name, legendArray[legend].image, gunArray[gun1].name, gunArray[gun1].image, gunArray[gun2].name, gunArray[gun2].image, armorArray[armor].name, armorArray[armor].image, helmetArray[helmet].name, helmetArray[helmet].image, personalArray[personal].name, $("#player"+i).val(), difficulty, score);
