@@ -3,127 +3,158 @@ var player1;
 var player2;
 var player3;
 
-
 var legendObject = {
-  "1" : {"name": "Wraith", "chance":10, "difficulty":1, "image":"./images/legends/wraith.png"},
-  "2" : {"name": "Mirage", "chance":10, "difficulty":2, "image":"./images/legends/mirage.png"},
-  "3" : {"name": "Octane", "chance":5, "difficulty":3, "image":"./images/legends/octane.png"},
-  "4" : {"name": "Revenant", "chance":15, "difficulty":1, "image":"./images/legends/revenant.png"},
-  "5" : {"name": "Gibralter", "chance":15, "difficulty":1, "image":"./images/legends/gibralter.png"},
-  "6" : {"name": "Caustic", "chance":25, "difficulty":2, "image":"./images/legends/caustic.png"},
-  "7" : {"name": "Wattson", "chance":10, "difficulty":2, "image":"./images/legends/wattson.png"},
-  "8" : {"name": "Lifeline", "chance":10, "difficulty":1, "image":"./images/legends/lifeline.png"},
-  "9" : {"name": "Loba", "chance":10, "difficulty":2, "image":"./images/legends/loba.png"},
-  "10" : {"name": "Bloodhound", "chance":10, "difficulty":1, "image":"./images/legends/bloodhound.png"},
-  "11" : {"name": "Pathfinder", "chance":10, "difficulty":1, "image":"./images/legends/pathfinder.png"},
-  "12" : {"name": "Crypto", "chance":10, "difficulty":3, "image":"./images/legends/crypto.png"},
-  "13" : {"name": "Bangalore", "chance":10, "difficulty":2, "image":"./images/legends/bangalore.png"}
+  "0" : {"name": "Wraith", "chance":1, "difficulty":8, "image":"./images/legends/wraith.png"},
+  "1" : {"name": "Mirage", "chance":1, "difficulty":9, "image":"./images/legends/mirage.png"},
+  "2" : {"name": "Octane", "chance":1, "difficulty":10, "image":"./images/legends/octane.png"},
+  "3" : {"name": "Revenant", "chance":1, "difficulty":8, "image":"./images/legends/revenant.png"},
+  "4" : {"name": "Gibralter", "chance":1, "difficulty":8, "image":"./images/legends/gibralter.png"},
+  "5" : {"name": "Caustic", "chance":1, "difficulty":9, "image":"./images/legends/caustic.png"},
+  "6" : {"name": "Wattson", "chance":1, "difficulty":9, "image":"./images/legends/wattson.png"},
+  "7" : {"name": "Lifeline", "chance":1, "difficulty":8, "image":"./images/legends/lifeline.png"},
+  "8" : {"name": "Loba", "chance":1, "difficulty":9, "image":"./images/legends/loba.png"},
+  "9" : {"name": "Bloodhound", "chance":1, "difficulty":8, "image":"./images/legends/bloodhound.png"},
+  "10" : {"name": "Pathfinder", "chance":1, "difficulty":8, "image":"./images/legends/pathfinder.png"},
+  "11" : {"name": "Crypto", "chance":1, "difficulty":10, "image":"./images/legends/crypto.png"},
+  "12" : {"name": "Bangalore", "chance":1, "difficulty":9, "image":"./images/legends/bangalore.png"}
 }
 
 var gunObject = {
+  "0" : {"name": "Fists", "chance":1, "difficulty":10, "image":"./images/guns/fists.png"},
   "1" : {"name": "Kraber", "chance":1, "difficulty":5, "image":"./images/guns/Kraber_SR.png"},
-  "2" : {"name": "Sentinel", "chance":1, "difficulty":4, "image":"./images/guns/Sentinel.png"},
-  "3" : {"name": "Longbow", "chance":2, "difficulty":3, "image":"./images/guns/Longbow_DRM_SR.png"},
-  "4" : {"name": "Triple Take", "chance":2, "difficulty":3, "image":"./images/guns/Tripple_Take_SR.png"},
-  "5" : {"name": "Charge Rifle", "chance":1, "difficulty":4, "image":"./images/guns/Charge_Rifle.png"},
+  "2" : {"name": "Sentinel", "chance":3, "difficulty":4, "image":"./images/guns/Sentinel.png"},
+  "3" : {"name": "Longbow", "chance":3, "difficulty":3, "image":"./images/guns/Longbow_DRM_SR.png"},
+  "4" : {"name": "Triple Take", "chance":3, "difficulty":3, "image":"./images/guns/Tripple_Take_SR.png"},
+  "5" : {"name": "Charge Rifle", "chance":3, "difficulty":4, "image":"./images/guns/Charge_Rifle.png"},
   "6" : {"name": "Hemlok", "chance":3, "difficulty":3, "image":"./images/guns/Hemlok_Burst_AR.png"},
   "7" : {"name": "Flatline", "chance":3, "difficulty":4, "image":"./images/guns/Flatline_AR.png"},
   "8" : {"name": "G7 Scout", "chance":3, "difficulty":2, "image":"./images/guns/G7_Scout_SR.png"},
   "9" : {"name": "R-301", "chance":3, "difficulty":4, "image":"./images/guns/R-301_Carabine_AR.png"},
-  "10" : {"name": "HAVOC", "chance":2, "difficulty":4, "image":"./images/guns/Havoc_Rifle_AR.png"},
+  "10" : {"name": "HAVOC", "chance":3, "difficulty":4, "image":"./images/guns/Havoc_Rifle_AR.png"},
   "11" : {"name": "Devotion", "chance":1, "difficulty":5, "image":"./images/guns/Devotion_LMG.png"},
   "12" : {"name": "Spitfire", "chance":3, "difficulty":3, "image":"./images/guns/Spitfire_LMG.png"},
-  "13" : {"name": "L-STAR", "chance":1, "difficulty":3, "image":"./images/guns/L-Star.png"},
+  "13" : {"name": "L-STAR", "chance":3, "difficulty":3, "image":"./images/guns/L-Star.png"},
   "14" : {"name": "Prowler", "chance":3, "difficulty":2, "image":"./images/guns/Prowler_Burst_SMG.png"},
   "15" : {"name": "R-99", "chance":3, "difficulty":3, "image":"./images/guns/R-99_SMG.png"},
-  "16" : {"name": "Alternator", "chance":1, "difficulty":5, "image":"./images/guns/Alternator_SMG.png"},
-  "17" : {"name": "Mastiff", "chance":1, "difficulty":3, "image":"./images/guns/Mastiff_SG.png"},
-  "18" : {"name": "EVA-8", "chance":2, "difficulty":4, "image":"./images/guns/EVA-8_Auto_SG.png"},
-  "19" : {"name": "Peacekeeper", "chance":2, "difficulty":5, "image":"./images/guns/PeaceKeeper_SG.png"},
-  "20" : {"name": "Mozambique", "chance":2, "difficulty":8, "image":"./images/guns/Mozambique_SG.png"},
+  "16" : {"name": "Alternator", "chance":3, "difficulty":5, "image":"./images/guns/Alternator_SMG.png"},
+  "17" : {"name": "Mastiff", "chance":3, "difficulty":3, "image":"./images/guns/Mastiff_SG.png"},
+  "18" : {"name": "EVA-8", "chance":3, "difficulty":4, "image":"./images/guns/EVA-8_Auto_SG.png"},
+  "19" : {"name": "Peacekeeper", "chance":1, "difficulty":5, "image":"./images/guns/PeaceKeeper_SG.png"},
+  "20" : {"name": "Mozambique", "chance":1, "difficulty":8, "image":"./images/guns/Mozambique_SG.png"},
   "21" : {"name": "Wingman", "chance":3, "difficulty":4, "image":"./images/guns/Wingman_Pistol.png"},
   "22" : {"name": "RE-45 Auto", "chance":3, "difficulty":4, "image":"./images/guns/RE-45_Pistol.png"},
-  "23" : {"name": "P2020", "chance":2, "difficulty":4, "image":"./images/guns/P2020_Pistol.png"},
-  "24" : {"name": "Any sniper", "chance":5, "difficulty":2, "image":"./images/guns/any_sniper.png"},
-  "25" : {"name": "Any AR", "chance":5, "difficulty":2, "image":"./images/guns/any_AR.png"},
-  "26" : {"name": "Any LMG", "chance":5, "difficulty":2, "image":"./images/guns/any_LMG.png"},
-  "27" : {"name": "Any SMG", "chance":5, "difficulty":2, "image":"./images/guns/any_SMG.png"},
-  "28" : {"name": "Any shotgun", "chance":5, "difficulty":3, "image":"./images/guns/any_SG.png"},
-  "29" : {"name": "Any pistol", "chance":5, "difficulty":2, "image":"./images/guns/any_pistol.png"},
-  "30" : {"name": "Any gun", "chance":20, "difficulty":1, "image":"./images/guns/any.png"},
-  "31" : {"name": "Fists", "chance":2, "difficulty":10, "image":"./images/guns/fists.png"}
+  "23" : {"name": "P2020", "chance":3, "difficulty":4, "image":"./images/guns/P2020_Pistol.png"},
+  "24" : {"name": "Any sniper", "chance":10, "difficulty":2, "image":"./images/guns/any_sniper.png"},
+  "25" : {"name": "Any AR", "chance":10, "difficulty":2, "image":"./images/guns/any_AR.png"},
+  "26" : {"name": "Any LMG", "chance":10, "difficulty":2, "image":"./images/guns/any_LMG.png"},
+  "27" : {"name": "Any SMG", "chance":10, "difficulty":2, "image":"./images/guns/any_SMG.png"},
+  "28" : {"name": "Any shotgun", "chance":10, "difficulty":3, "image":"./images/guns/any_SG.png"},
+  "29" : {"name": "Any pistol", "chance":10, "difficulty":2, "image":"./images/guns/any_pistol.png"},
+  "30" : {"name": "Any gun", "chance":5, "difficulty":1, "image":"./images/guns/any.png"}
+  
 }
 
 var armorObject = {
-  "1" : {"name": "Gray armor only", "chance":10, "difficulty":4, "image":"./images/armor/gray.png"},
-  "2" : {"name": "Blue armor only", "chance":10, "difficulty":5, "image":"./images/armor/blue.png"},
-  "3" : {"name": "Purple armor only", "chance":10, "difficulty":6, "image":"./images/armor/purple.png"},
-  "4" : {"name": "Gold armor only", "chance":5, "difficulty":8, "image":"./images/armor/gold.png"},
-  "5" : {"name": "Up to blue armor", "chance":15, "difficulty":3, "image":"./images/armor/upto-blue.png"},
-  "6" : {"name": "Up to purple armor", "chance":15, "difficulty":2, "image":"./images/armor/upto-purple.png"},
-  "7" : {"name": "Any armor", "chance":25, "difficulty":1, "image":"./images/armor/any.png"},
-  "8" : {"name": "No armor", "chance":10, "difficulty":10, "image":"./images/armor/none.png"}
+  "0" : {"name": "Gray armor only", "chance":5, "difficulty":4, "image":"./images/armor/gray.png"},
+  "1" : {"name": "Blue armor only", "chance":10, "difficulty":5, "image":"./images/armor/blue.png"},
+  "2" : {"name": "Purple armor only", "chance":5, "difficulty":6, "image":"./images/armor/purple.png"},
+  "3" : {"name": "Gold armor only", "chance":3, "difficulty":8, "image":"./images/armor/gold.png"},
+  "4" : {"name": "Up to blue armor", "chance":20, "difficulty":3, "image":"./images/armor/upto-blue.png"},
+  "5" : {"name": "Up to purple armor", "chance":15, "difficulty":2, "image":"./images/armor/upto-purple.png"},
+  "6" : {"name": "Any armor", "chance":5, "difficulty":1, "image":"./images/armor/any.png"},
+  "7" : {"name": "No armor", "chance":3, "difficulty":20, "image":"./images/armor/none.png"}
 }
 
 var helmetObject = {
-  "1" : {"name": "Gray helmet only", "chance":10, "difficulty":4, "image":"./images/helmets/gray.png"},
-  "2" : {"name": "Blue helmet only", "chance":10, "difficulty":5, "image":"./images/helmets/blue.png"},
-  "3" : {"name": "Purple helmet only", "chance":10, "difficulty":6, "image":"./images/helmets/purple.png"},
-  "4" : {"name": "Gold helmet only", "chance":5, "difficulty":8, "image":"./images/helmets/gold.png"},
-  "5" : {"name": "Up to blue helmet", "chance":15, "difficulty":3, "image":"./images/helmets/upto_blue.png"},
-  "6" : {"name": "Up to purple helmet", "chance":15, "difficulty":2, "image":"./images/helmets/upto_purple.png"},
-  "7" : {"name": "Any helmet", "chance":25, "difficulty":1, "image":"./images/helmets/any.png"},
-  "8" : {"name": "No helmet", "chance":10, "difficulty":10, "image":"./images/helmets/none.png"}
+  "0" : {"name": "Gray helmet only", "chance":5, "difficulty":4, "image":"./images/helmets/gray.png"},
+  "1" : {"name": "Blue helmet only", "chance":10, "difficulty":5, "image":"./images/helmets/blue.png"},
+  "2" : {"name": "Purple helmet only", "chance":5, "difficulty":6, "image":"./images/helmets/purple.png"},
+  "3" : {"name": "Gold helmet only", "chance":3, "difficulty":8, "image":"./images/helmets/gold.png"},
+  "4" : {"name": "Up to blue helmet", "chance":20, "difficulty":3, "image":"./images/helmets/upto_blue.png"},
+  "5" : {"name": "Up to purple helmet", "chance":15, "difficulty":2, "image":"./images/helmets/upto_purple.png"},
+  "6" : {"name": "Any helmet", "chance":5, "difficulty":1, "image":"./images/helmets/any.png"},
+  "7" : {"name": "No helmet", "chance":3, "difficulty":10, "image":"./images/helmets/none.png"}
 }
 
 var personalObject = {
-  "1" : {"name": "You can only carry one extra mag of ammo for each gun you are carrying", "chance":10, "difficulty":5, "image":""},
-  "2" : {"name": "You cannot use ziplines", "chance":10, "difficulty":3, "image":""},
-  "3" : {"name": "You cannot open doors but you may kick them open.", "chance":3, "difficulty":1, "image":""},
-  "4" : {"name": "You cannot open pods", "chance":10, "difficulty":5, "image":""},
-  "5" : {"name": "If you open a death box you must swap one of your guns for one of theirs. This overrides your gun rules.", "chance":10, "difficulty":5, "image":""},
+  "0" : {"name": "You must intentionally down yourself with a grenade, afterward you may remove your helmet restriction.", "chance":10, "difficulty":2, "image":""},
+  "1" : {"name": "You can only carry one extra mag of ammo for each gun you are carrying, but you can allow one teammate to swap their gun slot for a wingman.", "chance":5, "difficulty":5, "image":""},
+  "2" : {"name": "You cannot use ziplines, but you can use an RE-45 until you find one of the guns you are looking for.", "chance":5, "difficulty":3, "image":""},
+  "3" : {"name": "You cannot open doors but you may kick them open. Kick open 10 unique doors to veto your gun slot 2 rule.", "chance":10, "difficulty":1, "image":""},
+  "4" : {"name": "You cannot open pods. You can use any shotgun until the first ring closes though.", "chance":5, "difficulty":7, "image":""},
+  "5" : {"name": "If you open a death box you must swap one of your guns for one of theirs. This overrides your gun slot 1 rules.", "chance":5, "difficulty":5, "image":""},
   "6" : {"name": "You must occasionally do an enemy ping. You are not allowed to communicate to your team if it is real or not.", "chance":10, "difficulty":2, "image":""},
-  "7" : {"name": "Shield cells only. No batteries for you.", "chance":10, "difficulty":5, "image":""},
-  "8" : {"name": "No knock down shields for you.", "chance":10, "difficulty":4, "image":""},
-  "9" : {"name": "No backpacks for you.", "chance":10, "difficulty":8, "image":""},
-  "10" : {"name": "No attachments for any of your guns.", "chance":8, "difficulty":1, "image":""},
-  "11" : {"name": "I'm so sorry. You must crouch everywhere you walk. Clambering, balloons, and zips are allowed.", "chance":10, "difficulty":10, "image":""},
-  "12" : {"name": "If you have a scope on your gun, you must do a 360 before firing the first bullet in your clip", "chance":10, "difficulty":6, "image":""},
-  "13" : {"name": "Respect the Dead: No looting bodies.", "chance":10, "difficulty":8, "image":""},
-  "14" : {"name": "Every time you go up a balloon you must keep shooting until you reach the top", "chance":10, "difficulty":7, "image":""},
-  "15" : {"name": "Lazy Looter: You cannot loot care package.", "chance":10, "difficulty":3, "image":""},
-  "16" : {"name": "You are not allowed to carry or throw grenades.", "chance":10, "difficulty":5, "image":""},
-  "17" : {"name": "The first gun you find, no matter type is the only weapon you can use for the game. This overrides your gun rules.", "chance":10, "difficulty":7, "image":""},
+  "7" : {"name": "Shield cells only. No batteries for you. Collect 20 to reset your gun slot 2 rule.", "chance":5, "difficulty":5, "image":""},
+  "8" : {"name": "No knock down shields for you, but you can veto one teammate's helmet rules.", "chance":10, "difficulty":3, "image":""},
+  "9" : {"name": "No backpacks for you, but you can veto one teammate's armor rules.", "chance":5, "difficulty":7, "image":""},
+  "10" : {"name": "No attachments for any of your guns. Feel free to wear whatever armor/helmet you want though. (Overrides armor and helmet rules)", "chance":2, "difficulty":9, "image":""},
+  "11" : {"name": "I'm so sorry. You must crouch everywhere you walk. Clambering, balloons, and zips are allowed. ALL your other rules are overridden.", "chance":1, "difficulty":100, "image":""},
+  "12" : {"name": "If you have a scope on your gun, you must do a 360 before firing the first bullet in your clip. You are allowed to wear current armor tier, AND the next tier higher.", "chance":5, "difficulty":6, "image":""},
+  "13" : {"name": "Respect the Dead: No looting bodies. Allow one teammate to add purple armor to their allowed armor pool.", "chance":5, "difficulty":5, "image":""},
+  "14" : {"name": "Every time you go up a balloon you must keep shooting until you reach the top", "chance":10, "difficulty":2, "image":""},
+  "15" : {"name": "Lazy Looter: You cannot loot care package or enter locked vaults, but you can use a P2020 until you find the gun you are looking for.", "chance":5, "difficulty":5, "image":""},
+  "16" : {"name": "You are not allowed to carry or throw grenades. Feel free to use ANY sniper until the first circle closes though.", "chance":5, "difficulty":5, "image":""},
+  "17" : {"name": "The first gun you find, no matter type is now your gun slot 1 weapon. This overrides your gun slot 1 rules.", "chance":10, "difficulty":3, "image":""},
   "18" : {"name": "Grounded: You can only loot the bottom story/floor of any building/house/structure.", "chance":10, "difficulty":4, "image":""},
-  "19" : {"name": "You cannot shoot at someone until they start shooting at you.", "chance":10, "difficulty":8, "image":""},
-  "20" : {"name": "You are not allowed to ping.", "chance":10, "difficulty":3, "image":""},
-  "21" : {"name": "You must unbind your sprint key this game.", "chance":8, "difficulty":1, "image":""},
-  "22" : {"name": "You must turn down the master game volume to zero.", "chance":10, "difficulty":7, "image":""},
-  "23" : {"name": "No-scoping only.", "chance":10, "difficulty":7, "image":""},
-  "24" : {"name": "Every grenade you see, you must pick up and immediately throw it.", "chance":10, "difficulty":6, "image":""},
-  "25" : {"name": "You must fire three warning shots before engaging an enemy team.", "chance":10, "difficulty":5, "image":""},
-  "26" : {"name": "You MUST pick up every Ultimate accelerant you find, but you cannot use or drop them. Drop something to make space.", "chance":10, "difficulty":7, "image":""},
-  "27" : {"name": "Laid to rest: If a squad mate is fully killed YOU cannot resurrect them.", "chance":10, "difficulty":5, "image":""},
-  "28" : {"name": "Before resurrecting a teammate you must drop ALL of your gear. It's off limits to anyone on your team.", "chance":10, "difficulty":7, "image":""},
-  "29" : {"name": "Flightmaster: You must use every redeploy balloon you see.", "chance":10, "difficulty":4, "image":""},
-  "30" : {"name": "Take the role of hypeman. You need to be commentating on everyone elses moves.", "chance":10, "difficulty":2, "image":""},
-  "31" : {"name": "LUCKY!!! No special rules!", "chance":10, "difficulty":1, "image":""},
-  "32" : {"name": "Gray backpack only", "chance":10, "difficulty":2, "image":""},
-  "33" : {"name": "Isolation: Mute discord and game.", "chance":10, "difficulty":10, "image":""},
-  "34" : {"name": "Dictator: You decide where the team goes. Reprimand any teammate that forgets to call you Sir.", "chance":10, "difficulty":2, "image":""}
+  "19" : {"name": "You cannot shoot at someone until they start shooting at you. You may veto 1 teammate's gun 1 rule.", "chance":2, "difficulty":8, "image":""},
+  "20" : {"name": "You are not allowed to ping, but you can use an Alternator until you find a gun you are looking for.", "chance":5, "difficulty":4, "image":""},
+  "21" : {"name": "You must unbind your sprint key this game. You are also allowed to wear ANY armor. (Overrides armor rule)", "chance":3, "difficulty":6, "image":""},
+  "22" : {"name": "You must turn down the master game volume to 10%, but you can use any gun as your primary. (Overrides gun slot 1 rule)", "chance":5, "difficulty":6, "image":""},
+  "23" : {"name": "No-scoping only, but can veto a rule for 1 teammate.", "chance":5, "difficulty":9, "image":""},
+  "24" : {"name": "Every grenade you see, you must pick up and immediately throw it. Gain the next tier higher in your helmet pool.", "chance":5, "difficulty":7, "image":""},
+  "25" : {"name": "You must fire three warning shots before engaging an enemy team. For every kill you get you may veto 1 rule on your team.", "chance":5, "difficulty":6, "image":""},
+  "26" : {"name": "You MUST pick up but not use EVERY Ultimate Accelerant you find. Also reset your gun slot 2 rule.", "chance":5, "difficulty":7, "image":""},
+  "27" : {"name": "Laid to rest: If a squad mate is fully killed YOU cannot resurrect them.", "chance":5, "difficulty":5, "image":""},
+  "28" : {"name": "Before resurrecting a teammate you must permanantly discard ALL of your gear. It's available to your newly spawned teammate if they can use it though.", "chance":5, "difficulty":7, "image":""},
+  "29" : {"name": "Flightmaster: Use 3 unique redeployment balloons and you veto a rule of your choice for a teammate.", "chance":10, "difficulty":4, "image":""},
+  "30" : {"name": "If you get a kill you may swap 1 gun with any teammate.", "chance":10, "difficulty":2, "image":""},
+  "31" : {"name": "LUCKY!!! No special rules!", "chance":5, "difficulty":1, "image":""},
+  "32" : {"name": "Gray backpack only, however you may use ANY gun for the first minute of the game.", "chance":10, "difficulty":2, "image":""},
+  "33" : {"name": "Dictator: You decide where the team goes. Reprimand any teammate that forgets to call you Sir.", "chance":10, "difficulty":2, "image":""}
+  
 }
+
+var objArr = [legendObject, gunObject, armorObject, helmetObject, personalObject];
+var legendArray = [];
+var gunArray = [];
+var armorArray = [];
+var helmetArray = [];
+var personalArray = [];
+var nameArr = [legendArray, gunArray, armorArray, helmetArray, personalArray];
+
 
 // user input triggers this function to start the RNG process.
 function apexRng() {
     getNumberOfPlayers();
+    createOddsTable();
     setPlayers(); 
     differentLegends();
 }
 
+function createOddsTable() {
+  for(var i = 0; i < objArr.length; i++) {
+    arrName = nameArr[i];
+    createWeightedArr(objArr[i], arrName);
+  }
+}
+
+function createWeightedArr(obj, arrName) {
+  // how many properties do we need to loop through
+  var objCount = countProperties(obj);
+  // loop through each property
+  for(var i = 0; i <= objCount; i++) {
+    var times = obj[i].chance;
+      // for as many chances as the property has, push it to the current array that lives on the global scope.
+      for(var j = 0; j <= times; j++) {
+        arrName.push(obj[i]);   
+    }
+  }
+};
+
 function printPlayers() {
-  console.log(player1);
-  console.log(player2);
-  console.log(player3);
+  // console.log(player1);
+  // console.log(player2);
+  // console.log(player3);
   if (playerNum >= 1) {
     $("#player1name").html(player1.name)
     $("#player1legend").html(player1.legend)
@@ -142,7 +173,7 @@ function printPlayers() {
       "data-fill": '#f00',
       "data-duration": "2000"
     });
-    ldbar.set(player1.difficulty/.5);
+    ldbar.set(player1.difficulty/1);
     $("#player1difficulty").html(player1.score)
   }
   if (playerNum >= 2) {
@@ -163,7 +194,7 @@ function printPlayers() {
       "data-fill": '#f00',
       "data-duration": "2000"
     });
-    ldbar.set(player2.difficulty/.5);
+    ldbar.set(player2.difficulty/1);
     $("#player2difficulty").html(player2.score)
   }
   if (playerNum == 3) {
@@ -184,7 +215,7 @@ function printPlayers() {
       "data-fill": '#f00',
       "data-duration": "2000"
     });
-    ldbar.set(player3.difficulty/.5);
+    ldbar.set(player3.difficulty/1);
     $("#player3difficulty").html(player3.score)
   }
   //difficulty test
@@ -230,24 +261,48 @@ function differentLegends() {
 }
 
 //loop through the number of players and dynamically set player objects for them via the constructor function below
+// function setPlayers() {
+//   for(var i = 1; i <= playerNum; i++) {
+//       var legend = getRandomInt(0,countProperties(legendObject));
+//       var gun1 = getRandomInt(0,countProperties(gunObject));
+//       var gun2 = getRandomInt(0,countProperties(gunObject));
+//       var armor = getRandomInt(0,countProperties(armorObject));
+//       var helmet = getRandomInt(0,countProperties(helmetObject));
+//       var personal = getRandomInt(0,countProperties(personalObject));
+//       var difficulty = legendObject[legend].difficulty + gunObject[gun1].difficulty + gunObject[gun2].difficulty + armorObject[armor].difficulty + helmetObject[helmet].difficulty + personalObject[personal].difficulty;
+//       var score = legendObject[legend].difficulty * ((gunObject[gun1].difficulty * gunObject[gun2].difficulty) + (gunObject[gun1].difficulty * gunObject[gun2].difficulty)) * ((armorObject[armor].difficulty * helmetObject[helmet].difficulty) + (armorObject[armor].difficulty * helmetObject[helmet].difficulty)) * personalObject[personal].difficulty;
+//       if (i == 1) {
+//         player1 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty, score);
+//       }
+//       if (i == 2) {
+//         player2 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty, score);
+//       }
+//       if (i == 3) {
+//         player3 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty, score);
+//       }
+    
+//   }
+// }
+
 function setPlayers() {
   for(var i = 1; i <= playerNum; i++) {
-      var legend = getRandomInt(1,countProperties(legendObject));
-      var gun1 = getRandomInt(1,countProperties(gunObject));
-      var gun2 = getRandomInt(1,countProperties(gunObject));
-      var armor = getRandomInt(1,countProperties(armorObject));
-      var helmet = getRandomInt(1,countProperties(helmetObject));
-      var personal = getRandomInt(1,countProperties(personalObject));
-      var difficulty = legendObject[legend].difficulty + gunObject[gun1].difficulty + gunObject[gun2].difficulty + armorObject[armor].difficulty + helmetObject[helmet].difficulty + personalObject[personal].difficulty;
-      var score = legendObject[legend].difficulty * gunObject[gun1].difficulty * gunObject[gun2].difficulty * armorObject[armor].difficulty * helmetObject[helmet].difficulty * personalObject[personal].difficulty;
+      var legend = getRandomInt(0,legendArray.length);
+      var gun1 = getRandomInt(0,gunArray.length);
+      var gun2 = getRandomInt(0,gunArray.length);
+      var armor = getRandomInt(0,armorArray.length);
+      var helmet = getRandomInt(0,helmetArray.length);
+      var personal = getRandomInt(0,personalArray.length);
+      var difficulty = legendArray[legend].difficulty + ((gunArray[gun1].difficulty * gunArray[gun2].difficulty)) + (armorArray[armor].difficulty * helmetArray[helmet].difficulty) * personalArray[personal].difficulty;
+      var score = legendArray[legend].difficulty + ((gunArray[gun1].difficulty * gunArray[gun2].difficulty)) + (armorArray[armor].difficulty * helmetArray[helmet].difficulty) * personalArray[personal].difficulty;
+
       if (i == 1) {
-        player1 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty, score);
+        player1 = new Player(legendArray[legend].name, legendArray[legend].image, gunArray[gun1].name, gunArray[gun1].image, gunArray[gun2].name, gunArray[gun2].image, armorArray[armor].name, armorArray[armor].image, helmetArray[helmet].name, helmetArray[helmet].image, personalArray[personal].name, $("#player"+i).val(), difficulty, score);
       }
       if (i == 2) {
-        player2 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty, score);
+        player2 = new Player(legendArray[legend].name, legendArray[legend].image, gunArray[gun1].name, gunArray[gun1].image, gunArray[gun2].name, gunArray[gun2].image, armorArray[armor].name, armorArray[armor].image, helmetArray[helmet].name, helmetArray[helmet].image, personalArray[personal].name, $("#player"+i).val(), difficulty, score);
       }
       if (i == 3) {
-        player3 = new Player(legendObject[legend].name, legendObject[legend].image, gunObject[gun1].name, gunObject[gun1].image, gunObject[gun2].name, gunObject[gun2].image, armorObject[armor].name, armorObject[armor].image, helmetObject[helmet].name, helmetObject[helmet].image, personalObject[personal].name, $("#player"+i).val(), difficulty, score);
+        player3 = new Player(legendArray[legend].name, legendArray[legend].image, gunArray[gun1].name, gunArray[gun1].image, gunArray[gun2].name, gunArray[gun2].image, armorArray[armor].name, armorArray[armor].image, helmetArray[helmet].name, helmetArray[helmet].image, personalArray[personal].name, $("#player"+i).val(), difficulty, score);
       }
     
   }
@@ -278,7 +333,7 @@ function countProperties(obj) {
         if(obj.hasOwnProperty(prop))
             ++count;
     }
-    return count;
+    return (count - 1);
 }
 
 // get a random int in a range
